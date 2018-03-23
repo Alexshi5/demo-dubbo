@@ -1,1 +1,1 @@
-这是一个dubbo的简单demo，在此项目的根目录中包含有项目演示所需要的dubbo-admin的war包
+杩欐槸涓�涓猟ubbo鐨勭畝鍗昫emo锛屽湪姝ら」鐩殑鏍圭洰褰曚腑鍖呭惈鏈夐」鐩紨绀烘墍闇�瑕佺殑dubbo-admin鐨剋ar鍖咃紝鏀寔jdk8
