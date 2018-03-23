@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!--提供服务的供应商名称-->
+    <dubbo:application name="dubbo-provider"></dubbo:application>
+    <!--使用zookeeper服务中心注册服务，要先启动zookeeper
+        register:false代表只订阅，不注册
+        subscribe:false代表只注册，不订阅
+        check:false代表注册中心不存在时，不报错
+        address:配置zookeeper的ip和端口号，集群用逗号隔开
+    -->
+    <dubbo:registry address="zookeeper://192.168.188.130:2181" subscribe="false" check="false"></dubbo:registry>
+    <!--用dubbo协议在29999端口暴露服务-->
+    <dubbo:protocol name="dubbo" port="29999"></dubbo:protocol>
+    <!--要注册的服务接口-->
+    <dubbo:service interface="com.mengfei.api.DemoService" ref="demoService"></dubbo:service>
+    <!--实现接口的实现类-->
+    <bean id="demoService" class="com.mengfei.provider.DemoServiceImpl"></bean>
+</beans>

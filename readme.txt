@@ -1,0 +1,1 @@
+这是一个dubbo的简单demo，在此项目的根目录中包含有项目演示所需要的dubbo-admin的war包
